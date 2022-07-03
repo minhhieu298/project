@@ -1,0 +1,103 @@
+@import "../../sass/mixins.scss";
+
+//button hamburger
+.hamburger {
+  display: none;
+  .closed {
+    --size: 25px;
+    height: var(--size);
+    width: var(--size);
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    span {
+      height: calc(var(--size) / 12);
+      --gap: calc(var(--size) / 24);
+      border-radius: var(--gap);
+      --n_gap: calc(-1 * var(--gap));
+      width: 100%;
+      display: block;
+      background-color: black;
+      position: absolute;
+      transition: transform 0.5s, opacity 0.5s;
+      top: 50%;
+      right: 0;
+    }
+    span:nth-child(1) {
+      transform: translate(0, calc(-1 * var(--size) / 2 + var(--gap)));
+    }
+
+    span:nth-child(2) {
+      transform: translate(0, var(--n_gap));
+      opacity: 1;
+    }
+
+    span:nth-child(3) {
+      transform: translate(0, calc(var(--size) / 2 - var(--gap) * 2));
+    }
+  }
+  .opened {
+    --size: 25px;
+    height: var(--size);
+    width: var(--size);
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    span {
+      height: calc(var(--size) / 12);
+      --gap: calc(var(--size) / 24);
+      border-radius: var(--gap);
+      --n_gap: calc(-1 * var(--gap));
+      width: 100%;
+      display: block;
+      background-color: black;
+      position: absolute;
+      transition: transform 0.5s, opacity 0.5s;
+      top: 50%;
+      right: 0;
+    }
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(var(--n_gap), var(--n_gap));
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transform: translate(0, var(--n_gap)) scale(0.01);
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(var(--gap), var(--n_gap));
+    }
+  }
+  span:nth-child(2) {
+    width: 80%;
+  }
+  @include maxWidth(768px) {
+    display: block;
+    flex-basis: 90%;
+  }
+}
+
+.nav-animation,
+.nav-animations {
+  animation: apperAnima 1s linear;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+.nav-animations {
+  animation-delay: 2s;
+}
+@keyframes apperAnima {
+  0% {
+    visibility: hidden;
+    transform: translateY(-100px);
+  }
+  100% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+}

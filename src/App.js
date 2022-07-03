@@ -1,0 +1,36 @@
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/Header/Header";
+import ProductDetail from "./components/ProductDetail";
+import Cart from "./pages/Cart";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import HeartProduct from "./pages/HeartProduct";
+import Login from "./components/Login";
+import CreateProduct from "./components/CreateProduct";
+import Footer from "./components/Footer";
+
+const admin = {
+  username: "admin",
+  password: "admin123",
+};
+
+function App() {
+  return (
+    <div className="w-full h-full animation">
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/heart" element={<HeartProduct />} />
+        <Route path="/login" element={<Login data={admin} />} />
+        <Route path="/create" element={<CreateProduct />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
