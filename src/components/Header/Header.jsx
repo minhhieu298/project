@@ -41,7 +41,7 @@ const Header = () => {
         }
     })
     return (
-        <header className='w-full'>
+        <header className='w-full h-full'>
             <div ref={scrollRef} className='flex fixed w-full h-16 justify-between items-center inset-0 sm:px-5 md:px-5 lg:px-10 xl:px-10 px-5 transition duration-500 ease-in-out'>
                 <Hamburger open={open} setOpen={setOpen} />
                 <nav>

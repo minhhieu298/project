@@ -49,7 +49,7 @@ const Products = () => {
                         }
                     </select>
                 </div>
-                <div className='flex-1 grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4 px-12'>
+                <div className='flex-1 grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4 px-12 '>
                     {
                         data.map(item => (
                             <Product key={item.id} item={item} />

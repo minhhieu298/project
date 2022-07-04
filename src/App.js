@@ -16,18 +16,21 @@ const admin = {
 
 function App() {
   return (
-    <div className="w-full h-full animation">
+    <div className="w-full h-full animation flex flex-col">
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/heart" element={<HeartProduct />} />
-        <Route path="/login" element={<Login data={admin} />} />
-        <Route path="/create" element={<CreateProduct />} />
-      </Routes>
+      <div className="w-full h-screen">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/heart" element={<HeartProduct />} />
+          <Route path="/login" element={<Login data={admin} />} />
+          <Route path="/create" element={<CreateProduct />} />
+        </Routes>
+      </div>
+
       <Footer />
     </div>
   );
