@@ -16,10 +16,10 @@ const admin = {
 
 function App() {
   return (
-    <div className="w-full h-full animation flex flex-col">
+    <div className="w-full h-full animation">
       <Header />
 
-      <div className="w-full h-screen">
+      <div className="w-full min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
@@ -31,7 +31,9 @@ function App() {
         </Routes>
       </div>
 
-      <Footer />
+      <div className="mt-10">
+        <Footer />
+      </div>
     </div>
   );
 }
