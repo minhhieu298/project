@@ -26,7 +26,7 @@ const Cart = () => {
   return (
     <Helmet title="Cart">
       <div className='container mx-auto flex mt-16 xl:flex-row flex-col'>
-        <div className='xl:w-3/4 w-full grid grid-cols-3 items-center'>
+        <div className='xl:w-3/4 w-full grid grid-cols-3 items-center py-3'>
           {
             cartItems.map((item, index) => (
               <React.Fragment key={index}>
@@ -59,7 +59,7 @@ const Cart = () => {
             </p>
           </div>
           <div className='mt-auto'>
-            <p className='text-right font-bold text-xl xl:text-2xl'>Bill: ${
+            <p className='font-bold text-xl xl:text-2xl'>Bill: ${
               cartItems.reduce((a, b) => a + b.price * b.quantity, 0)
             }</p>
           </div>

@@ -8,11 +8,8 @@ import HeartProduct from "./pages/HeartProduct";
 import Login from "./components/Login";
 import CreateProduct from "./components/CreateProduct";
 import Footer from "./components/Footer";
+import Register from "./components/Register";
 
-const admin = {
-  username: "admin",
-  password: "admin123",
-};
 
 function App() {
   return (
@@ -26,8 +23,9 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/heart" element={<HeartProduct />} />
-          <Route path="/login" element={<Login data={admin} />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/create" element={<CreateProduct />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
 

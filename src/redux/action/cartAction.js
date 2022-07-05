@@ -1,7 +1,6 @@
 import * as types from "../constants";
 
 export const addToCart = (product) => (dispatch, getState) => {
-  console.log(product);
   dispatch({
     type: types.ADD_TO_CART,
     payload: {

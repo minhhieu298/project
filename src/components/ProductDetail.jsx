@@ -9,10 +9,10 @@ import { addToCart } from '../redux/action/cartAction';
 const ProductDetail = () => {
     const { id } = useParams();
     const html = products.find(e => e.id === Number(id));
-
     const [quantity, setQuantity] = useState(1);
     const [size, setSize] = useState(undefined);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const check = JSON.parse(localStorage.getItem('login'));
 
 
     const update = (type) => {
@@ -35,7 +35,11 @@ const ProductDetail = () => {
                 size: size,
                 quantity
             }
-            dispatch(addToCart(product))
+            if (check) {
+                dispatch(addToCart(product))
+            } else {
+                alert('login to buy something')
+            }
         }
     }
 
